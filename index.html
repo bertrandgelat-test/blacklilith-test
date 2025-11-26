@@ -542,7 +542,13 @@
 
       // Gestion du clic sur le bouton menu
       menuToggle.addEventListener('click', function() {
-        navLinks.classList.toggle('active');
+        if (window.innerWidth <= 768) {
+          if (navLinks.style.display === 'none' || navLinks.style.display === '') {
+            navLinks.style.display = 'flex';
+          } else {
+            navLinks.style.display = 'none';
+          }
+        }
       });
 
       // Gestion des onglets
@@ -564,7 +570,7 @@
 
           // Fermer le menu sur mobile après clic
           if (window.innerWidth <= 768) {
-            navLinks.classList.remove('active');
+            navLinks.style.display = 'none';
           }
         });
       });
