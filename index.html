@@ -70,7 +70,7 @@
       width: 100vw;
       height: 60vh;
       min-height: 350px;
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('hero-bg.jpg');
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('bl.png');
       background-size: cover;
       background-position: center;
       display: flex;
@@ -202,20 +202,31 @@
     .reseaux {
       text-align: center;
       margin: 40px 0;
+      padding: 20px;
+    }
+    .reseaux-content {
+      display: inline-block;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      border-radius: 10px;
     }
     .btn-insta {
       display: inline-block;
       margin-top: 10px;
-      padding: 10px 20px;
-      background: #E1306A;
+      padding: 15px 30px;
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
       color: white;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
     .btn-insta:hover {
-      background: #c02a5d;
       transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
     .content-section {
       display: none;
@@ -223,6 +234,32 @@
     }
     .active {
       display: block;
+    }
+    .histoire-section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background: url('MH.png') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .histoire-content {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .histoire-content h2 {
+      color: #84c223;
+      margin-bottom: 20px;
+    }
+    .histoire-content p {
+      font-size: 1.1em;
+      line-height: 1.6;
     }
     @media (max-width: 768px) {
       .nav-links {
@@ -251,18 +288,42 @@
         <li><a href="#accueil">Accueil</a></li>
         <li><a href="#creations">Mes créations</a></li>
         <li><a href="#nouveautes">Nouveautés</a></li>
-        <li><a href="#sold-out">Sold Out</a></li>
         <li><a href="#sur-mesure">Sur-mesure</a></li>
         <li><a href="#histoire">Mon histoire</a></li>
       </ul>
     </div>
   </nav>
 
-  <div id="accueil">
+  <div id="accueil" class="content-section active">
     <div class="hero">
       <div class="hero-content">
         <h1>Black Lilith</h1>
         <p>Découvrez des bijoux uniques faits main, inspirés par l'élégance sombre et la modernité</p>
+      </div>
+    </div>
+
+    <div class="section-title">Sold Out</div>
+    <div class="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item">
+          <img src="so1.png" alt="Sold Out 1">
+          <div class="carousel-caption">
+            Thornbound - Un collier né pour marquer la nuit.
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="so2.png" alt="Sold Out 2">
+          <div class="carousel-caption">
+            Shadowed Moon - On raconte que chaque chaîne retient un fragment de nuit.<br>
+            Un collier comme une invocation, entre rituel lunaire et magie noire. Portez l’ombre, devenez l’éclipse.
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="so3.png" alt="Sold Out 3">
+          <div class="carousel-caption">
+            Le choker « Soleil Noir », fait à la main en acier inoxydable, invoque la lumière interdite et scelle l’alliance entre éclat et ténèbres. Un talisman sacré, porteur de mystère et de puissance.
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -303,34 +364,14 @@
     </div>
   </div>
 
-  <div id="sold-out" class="content-section">
-    <div class="section-title">Sold Out</div>
-    <div class="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item">
-          <img src="so1.png" alt="Sold Out 1">
-          <div class="carousel-caption">
-            Thornbound - Un collier né pour marquer la nuit.
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="so2.png" alt="Sold Out 2">
-          <div class="carousel-caption">
-            Shadowed Moon - On raconte que chaque chaîne retient un fragment de nuit.<br>
-            Un collier comme une invocation, entre rituel lunaire et magie noire. Portez l’ombre, devenez l’éclipse.
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="so3.png" alt="Sold Out 3">
-          <div class="carousel-caption">
-            Le choker « Soleil Noir », fait à la main en acier inoxydable, invoque la lumière interdite et scelle l’alliance entre éclat et ténèbres. Un talisman sacré, porteur de mystère et de puissance.
-          </div>
-        </div>
+  <div id="sur-mesure" class="content-section">
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Black Lilith</h1>
+        <p>Découvrez des bijoux uniques faits main, inspirés par l'élégance sombre et la modernité</p>
       </div>
     </div>
-  </div>
 
-  <div id="sur-mesure" class="content-section">
     <div class="section-title">Sur-mesure</div>
     <div class="creations-container">
       <p>Découvrez nos créations sur-mesure. Contactez-nous pour un bijou unique fait spécialement pour vous.</p>
@@ -338,9 +379,11 @@
   </div>
 
   <div id="histoire" class="content-section">
-    <div class="section-title">Mon histoire</div>
-    <div class="creations-container">
-      <p>Découvrez l'histoire derrière Black Lilith et notre passion pour les bijoux uniques.</p>
+    <div class="histoire-section">
+      <div class="histoire-content">
+        <h2>Mon histoire</h2>
+        <p>Découvrez l'histoire derrière Black Lilith et notre passion pour les bijoux uniques.</p>
+      </div>
     </div>
   </div>
 
@@ -353,9 +396,11 @@
 
   <!-- Section Instagram -->
   <div class="reseaux">
-    Retrouvez-moi sur les réseaux&nbsp;!
-    <br>
-    <a class="btn-insta" href="https://www.instagram.com/blacklilith_fr" target="_blank">Instagram</a>
+    <div class="reseaux-content">
+      Retrouvez-moi sur les réseaux&nbsp;!
+      <br>
+      <a class="btn-insta" href="https://www.instagram.com/blacklilith_fr" target="_blank">Instagram</a>
+    </div>
   </div>
 
   <script>
