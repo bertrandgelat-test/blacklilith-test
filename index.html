@@ -85,7 +85,7 @@
       min-height: 350px;
       background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('bl1.png');
       background-size: cover;
-      background-position: center;
+      background-position: center bottom; /* Modification pour descendre l'image */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -177,6 +177,10 @@
       width: 100%;
       text-align: center;
       font-size: 0.85em;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      letter-spacing: 0.5px;
     }
     .boutiques-section {
       text-align: center;
@@ -190,27 +194,34 @@
     .bouton-boutique {
       display: inline-block;
       margin: 0 10px;
-      padding: 10px 20px;
-      border-radius: 5px;
+      padding: 12px 25px;
+      border-radius: 30px; /* Boutons plus ronds */
       text-decoration: none;
       font-weight: bold;
       transition: all 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
     .btn-vinted {
-      background: #84c223;
+      background: linear-gradient(135deg, #84c223 0%, #6a9a20 100%);
       color: black;
+      border: 2px solid #84c223;
     }
     .btn-vinted:hover {
-      background: #6a9a20;
+      background: linear-gradient(135deg, #6a9a20 0%, #507a18 100%);
       transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
     .btn-etsy {
-      background: #f56400;
+      background: linear-gradient(135deg, #f56400 0%, #d25300 100%);
       color: white;
+      border: 2px solid #f56400;
     }
     .btn-etsy:hover {
-      background: #d25300;
+      background: linear-gradient(135deg, #d25300 0%, #b04500 100%);
       transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
     .reseaux {
       text-align: center;
