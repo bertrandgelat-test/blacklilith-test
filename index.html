@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Black Lilith - Bijoux uniques faits main</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
   <style>
@@ -26,6 +27,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-direction: column;
     }
     .logo {
       font-family: 'UnifrakturCook', cursive;
@@ -34,12 +36,23 @@
       text-decoration: none;
       letter-spacing: 1px;
     }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5em;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
     .nav-links {
       display: flex;
       list-style: none;
+      width: 100%;
+      justify-content: center;
     }
     .nav-links li {
-      margin-left: 30px;
+      margin: 0 15px;
     }
     .nav-links a {
       color: #fff;
@@ -67,7 +80,7 @@
     }
     .hero {
       position: relative;
-      width: 100vw;
+      width: 100%;
       height: 60vh;
       min-height: 350px;
       background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('bl1.png');
@@ -274,7 +287,7 @@
     }
     .sur-mesure-hero {
       position: relative;
-      width: 100vw;
+      width: 100%;
       height: 60vh;
       min-height: 350px;
       background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('SM2.png');
@@ -285,21 +298,84 @@
       justify-content: center;
       text-align: center;
     }
+
+    /* Media Queries pour mobile */
     @media (max-width: 768px) {
+      .nav-container {
+        padding: 10px;
+      }
+
       .nav-links {
         display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
       }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+      }
+
+      .nav-links a {
+        font-size: 1.2em;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .hero {
+        height: 40vh;
+        min-height: 250px;
+      }
+
       .hero-content h1 {
         font-size: 2em;
       }
+
       .hero-content p {
         font-size: 1em;
       }
+
       .section-title {
         font-size: 1.5em;
+        margin: 40px 0 20px;
       }
+
       .creation {
-        width: 250px;
+        width: 100%;
+        margin: 10px;
+      }
+
+      .sold-out-item {
+        width: 100%;
+        margin: 15px 0;
+      }
+
+      .bouton-boutique {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+      }
+
+      .btn-insta {
+        display: block;
+        margin: 20px auto;
+      }
+
+      .histoire-section {
+        padding-top: 100px;
+      }
+
+      .histoire-content {
+        padding: 20px;
       }
     }
   </style>
@@ -308,6 +384,7 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="#accueil" class="logo">Black Lilith</a>
+      <button class="menu-toggle">☰</button>
       <ul class="nav-links">
         <li><a href="#accueil">Accueil</a></li>
         <li><a href="#creations">Mes créations</a></li>
@@ -448,6 +525,14 @@
   </div>
 
   <script>
+    // Gestion du menu mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', function() {
+      navLinks.classList.toggle('active');
+    });
+
     // Gestion des onglets
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', function(e) {
@@ -464,11 +549,25 @@
 
         // Changer l'URL sans recharger la page
         history.pushState(null, null, targetId);
+
+        // Fermer le menu sur mobile après clic
+        if (window.innerWidth <= 768) {
+          navLinks.classList.remove('active');
+        }
       });
     });
 
     // Afficher la section par défaut (accueil)
     document.getElementById('accueil').classList.add('active');
+
+    // Gestion responsive
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        navLinks.style.display = 'flex';
+      } else {
+        navLinks.style.display = 'none';
+      }
+    });
   </script>
 </body>
 </html>
