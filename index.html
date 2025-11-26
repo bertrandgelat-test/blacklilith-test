@@ -2,11 +2,156 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Black Lilith TEST</title>
+  <title>TEST Black Lilith - Bijoux uniques faits main</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: #fff;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .hero {
+      position: relative;
+      width: 100vw;
+      height: 60vh;
+      min-height: 350px;
+      background: url('bl1.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0,0,0,0.5);
+      padding: 30px 50px;
+      border-radius: 10px;
+      font-family: 'UnifrakturCook', cursive;
+      font-size: 2.5em;
+      color: #fff;
+      letter-spacing: 2px;
+      text-align: center;
+      text-shadow: 2px 2px 8px #000;
+      z-index: 2;
+    }
+    .logo {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 100px;
+      height: auto;
+      z-index: 3;
+      border-radius: 8px;
+    }
+    .intro {
+      max-width: 700px;
+      margin: 40px auto 20px auto;
+      font-size: 1.2em;
+      color: #fff;
+      line-height: 1.7;
+      text-align: center;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2.2em;
+      font-weight: 700;
+      margin: 50px 0 30px 0;
+      letter-spacing: 1px;
+      color: #fff;
+    }
+    .creation {
+      max-width: 600px;
+      margin: 0 auto 40px auto;
+      background: #181818;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      padding: 20px;
+      text-align: center;
+    }
+    .creation img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    .creation-desc {
+      color: #fff;
+      font-size: 1.1em;
+      margin-top: 10px;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .reseaux {
+      text-align: center;
+      margin: 60px 0 30px 0;
+      font-size: 1.3em;
+      color: #fff;
+    }
+    .btn-insta {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 40px;
+      background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcb045);
+      color: #fff;
+      font-size: 1.1em;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+      letter-spacing: 1px;
+    }
+    .btn-insta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(131,58,180,0.4);
+    }
+    @media (max-width: 700px) {
+      .hero-text { font-size: 1.3em; padding: 15px 10px; }
+      .section-title { font-size: 1.4em; }
+      .creation { padding: 10px; }
+      .logo { width: 80px; top: 10px; right: 10px; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Bienvenue sur mon site de bijoux kinky</h1>
-  <img src="bk1.png" alt="Hello">
-  <p>Voici ma collection de bijoux faits main.</p>
+  <section class="hero">
+    <div class="hero-text">
+      Bienvenue sur mon site
+    </div>
+    <img src="bl.jpg" alt="Logo Black Lilith" class="logo">
+  </section>
+
+  <div class="intro">
+    <p>
+      Découvrez <strong>Black Lilith</strong>, une marque de bijoux faits main, inspirée par l’élégance sombre et la modernité. Chaque pièce est conçue avec passion pour révéler votre singularité et sublimer votre style.
+    </p>
+  </div>
+
+  <div class="section-title">Mes créations</div>
+
+  <div class="creation">
+    <img src="bl3.png" alt="Bijou gothique 1">
+    <div class="creation-desc">
+      Liaison interdite ~ Trois anneaux, un pacte. Une goutte de sang pour lier les âmes. Ce collier ne choisit que les esprits et âmes indomptés.
+    </div>
+  </div>
+
+  <div class="creation">
+    <img src="bl2.png" alt="Bijou gothique 2">
+    <div class="creation-desc">
+     Spiked Mistress ~ chaînes d’acier, pointes affûtées et puissance féminine incarnée. Créé à la main pour celles qui règnent dans l’ombre...
+    </div>
+  </div>
+
+  <div class="reseaux">
+    Retrouvez-moi sur les réseaux&nbsp;!
+    <br>
+    <a class="btn-insta" href="https://www.instagram.com/blacklilith_fr" target="_blank">Instagram</a>
+  </div>
 </body>
 </html>
