@@ -562,13 +562,19 @@
     document.getElementById('accueil').classList.add('active');
 
     // Gestion responsive
-    window.addEventListener('resize', function() {
+    function checkScreenSize() {
       if (window.innerWidth > 768) {
         navLinks.style.display = 'flex';
       } else {
         navLinks.style.display = 'none';
       }
-    });
+    }
+
+    // Exécuter une fois au chargement
+    checkScreenSize();
+
+    // Exécuter à chaque redimensionnement
+    window.addEventListener('resize', checkScreenSize);
   </script>
 </body>
 </html>
