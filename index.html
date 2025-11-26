@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Black Lilith - Bijoux uniques faits main</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
@@ -11,6 +12,8 @@
       color: #fff;
       font-family: 'Montserrat', Arial, sans-serif;
     }
+
+    /* NAVBAR */
     .navbar {
       position: fixed;
       top: 0;
@@ -38,9 +41,7 @@
       display: flex;
       list-style: none;
     }
-    .nav-links li {
-      margin-left: 30px;
-    }
+    .nav-links li { margin-left: 30px; }
     .nav-links a {
       color: #fff;
       text-decoration: none;
@@ -49,9 +50,7 @@
       position: relative;
       transition: color 0.3s;
     }
-    .nav-links a:hover {
-      color: #84c223;
-    }
+    .nav-links a:hover { color: #84c223; }
     .nav-links a::after {
       content: '';
       position: absolute;
@@ -62,15 +61,15 @@
       background: #84c223;
       transition: width 0.3s;
     }
-    .nav-links a:hover::after {
-      width: 100%;
-    }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* HERO (éclairci) */
     .hero {
       position: relative;
       width: 100vw;
       height: 60vh;
       min-height: 350px;
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('bl1.png');
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('bl1.png');
       background-size: cover;
       background-position: center;
       display: flex;
@@ -84,417 +83,171 @@
       font-family: 'UnifrakturCook', cursive;
       letter-spacing: 2px;
     }
-    .hero-content p {
-      font-size: 1.2em;
-      margin-top: 15px;
-    }
-    .section-title {
-      text-align: center;
-      font-size: 2em;
-      margin: 80px 0 30px; /* Augmenté l'espace en haut */
-      position: relative;
-      font-family: 'UnifrakturCook', cursive;
-    }
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 2px;
-      background: #84c223;
-    }
-    .creations-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .creation {
-      width: 300px;
-      margin: 20px;
-      text-align: center;
-    }
-    .creation img {
+    .hero-content p { font-size: 1.2em; margin-top: 15px; }
+
+    /* CARROUSEL FIXÉ */
+    .carousel-container {
       width: 100%;
-      height: auto;
-      border-radius: 5px;
-      transition: transform 0.3s;
-    }
-    .creation img:hover {
-      transform: scale(1.05);
-    }
-    .creation-desc {
-      margin-top: 15px;
-      font-size: 0.9em;
-      line-height: 1.5;
-    }
-    .carousel {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
+      max-width: 800px;
+      margin: 60px auto;
       overflow: hidden;
       position: relative;
     }
     .carousel-inner {
       display: flex;
-      transition: transform 0.5s ease;
+      transition: transform 0.6s ease-in-out;
     }
     .carousel-item {
       min-width: 100%;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      text-align: center;
     }
     .carousel-item img {
-      width: 300px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 5px;
-      margin: 0 auto;
-      display: block;
+      width: 100%;
+      border-radius: 8px;
     }
-    .carousel-caption {
-      position: relative;
+    .carousel-text {
       margin-top: 15px;
-      background: rgba(0, 0, 0, 0.7);
-      color: white;
+      background: rgba(0,0,0,0.6);
       padding: 15px;
       border-radius: 5px;
-      width: 300px;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* SUR-MESURE HERO éclairci */
+    .surmesure-hero {
+      height: 40vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('surmesure.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* MON HISTOIRE HERO corrigé */
+    .histoire-hero {
+      height: 40vh;
+      background: url('histoire.jpg');
+      background-size: cover;
+      background-position: center 30%; /* ↓ redescendu */
+    }
+
+    /* RÉSEAUX – suppression du fond noir */
+    .reseaux {
+      padding: 40px 0;
       text-align: center;
     }
-    .boutiques-section {
-      text-align: center;
-      margin: 40px 0;
+    .reseaux-content {
+      font-size: 1.4em;
+      margin-bottom: 15px;
     }
-    .boutiques-title {
-      font-size: 1.8em;
-      margin-bottom: 20px;
-      font-family: 'UnifrakturCook', cursive;
-    }
-    .bouton-boutique {
-      display: inline-block;
-      margin: 0 10px;
-      padding: 10px 20px;
+    .btn-insta {
+      padding: 12px 25px;
+      background: #84c223;
+      color: #000;
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
-      transition: all 0.3s;
-    }
-    .btn-vinted {
-      background: #84c223;
-      color: black;
-    }
-    .btn-vinted:hover {
-      background: #6a9a20;
-      transform: translateY(-3px);
-    }
-    .btn-etsy {
-      background: #f56400;
-      color: white;
-    }
-    .btn-etsy:hover {
-      background: #d25300;
-      transform: translateY(-3px);
-    }
-    .reseaux {
-      text-align: center;
-      margin: 40px 0;
-      padding: 20px;
-    }
-    .reseaux-content {
-      display: inline-block;
-      background: rgba(0, 0, 0, 0.8);
-      padding: 20px;
-      border-radius: 10px;
-    }
-    .btn-insta {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 15px 30px;
-      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: all 0.3s;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-    .btn-insta:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    }
-    .content-section {
-      display: none;
-      padding: 20px;
-    }
-    .active {
-      display: block;
-    }
-    .histoire-section {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      background: url('MH.png') no-repeat center center;
-      background-size: cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding-top: 200px; /* Augmenté pour descendre davantage le contenu */
-    }
-    .histoire-content {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 30px;
-      border-radius: 10px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .histoire-content h2 {
-      color: #84c223;
-      margin-bottom: 20px;
-    }
-    .histoire-content p {
-      font-size: 1.1em;
-      line-height: 1.6;
-    }
-    .histoire-content .tags {
-      margin-top: 20px;
-      font-size: 1em;
-    }
-    .histoire-content .tags span {
-      display: inline-block;
-      margin: 5px;
-      background: #84c223;
-      color: black;
-      padding: 5px 10px;
-      border-radius: 20px;
-    }
-    .sur-mesure-hero {
-      position: relative;
-      width: 100vw;
-      height: 60vh;
-      min-height: 350px;
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('SM2.png');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-      .hero-content h1 {
-        font-size: 2em;
-      }
-      .hero-content p {
-        font-size: 1em;
-      }
-      .section-title {
-        font-size: 1.5em;
-      }
-      .creation {
-        width: 250px;
-      }
     }
   </style>
 </head>
+
 <body>
-  <nav class="navbar">
+
+  <!-- NAVBAR -->
+  <div class="navbar">
     <div class="nav-container">
-      <a href="#accueil" class="logo">Black Lilith</a>
+      <a href="#" class="logo">Black Lilith</a>
       <ul class="nav-links">
         <li><a href="#accueil">Accueil</a></li>
         <li><a href="#creations">Mes créations</a></li>
         <li><a href="#nouveautes">Nouveautés</a></li>
-        <li><a href="#sur-mesure">Sur-mesure</a></li>
+        <li><a href="#surmesure">Sur-mesure</a></li>
         <li><a href="#histoire">Mon histoire</a></li>
       </ul>
     </div>
-  </nav>
+  </div>
 
-  <div id="accueil" class="content-section active">
+  <!-- ACCUEIL -->
+  <div id="accueil" class="content-section">
     <div class="hero">
       <div class="hero-content">
         <h1>Black Lilith</h1>
-        <p>Découvrez des bijoux uniques faits main, inspirés par l'élégance sombre et la modernité</p>
+        <p>Bijoux uniques faits main</p>
       </div>
     </div>
 
-    <div class="section-title">Sold Out</div>
-    <div class="carousel">
+    <!-- CARROUSEL -->
+    <div class="carousel-container">
       <div class="carousel-inner">
+
+        <!-- IMAGE 1 -->
         <div class="carousel-item">
-          <img src="so1.png" alt="Sold Out 1">
-          <div class="carousel-caption">
-            Thornbound - Un collier né pour marquer la nuit.
+          <img src="so1.png">
+          <div class="carousel-text">
+            Thornbound – Un collier né pour marquer la nuit.
           </div>
         </div>
+
+        <!-- IMAGE 2 -->
         <div class="carousel-item">
-          <img src="so2.png" alt="Sold Out 2">
-          <div class="carousel-caption">
-            Shadowed Moon - On raconte que chaque chaîne retient un fragment de nuit.<br>
-            Un collier comme une invocation, entre rituel lunaire et magie noire. Portez l’ombre, devenez l’éclipse.
+          <img src="so2.png">
+          <div class="carousel-text">
+            <strong>Shadowed Moon</strong><br>
+            On raconte que chaque chaîne retient un fragment de nuit.<br>
+            Un collier comme une invocation, entre rituel lunaire et magie noire.<br>
+            Portez l’ombre, devenez l’éclipse.
           </div>
         </div>
+
+        <!-- IMAGE 3 -->
         <div class="carousel-item">
-          <img src="so3.png" alt="Sold Out 3">
-          <div class="carousel-caption">
-            Le choker « Soleil Noir », fait à la main en acier inoxydable, invoque la lumière interdite et scelle l’alliance entre éclat et ténèbres. Un talisman sacré, porteur de mystère et de puissance.
+          <img src="so3.png">
+          <div class="carousel-text">
+            <strong>Soleil Noir</strong><br>
+            Sous l’ombre des astres, le rituel s’accomplit…<br>
+            Le choker « Soleil Noir », fait à la main en acier inoxydable,<br>
+            invoque la lumière interdite et scelle l’alliance entre éclat et ténèbres.<br>
+            Un talisman sacré, porteur de mystère et de puissance.
           </div>
         </div>
+
       </div>
     </div>
   </div>
 
-  <div id="creations" class="content-section">
-    <div class="section-title">Mes créations</div>
-    <div class="creations-container">
-      <div class="creation">
-        <a href="https://www.vinted.fr/brand/21916732-blacklilith" target="_blank">
-          <img src="bl3.png" alt="Bijou gothique 1">
-        </a>
-        <div class="creation-desc">
-          Liaison interdite ~ Trois anneaux, un pacte. Une goutte de sang pour lier les âmes. Ce collier ne choisit que les esprits et âmes indomptés.
-        </div>
-      </div>
-      <div class="creation">
-        <a href="https://www.vinted.fr/brand/21916732-blacklilith" target="_blank">
-          <img src="bl2.png" alt="Bijou gothique 2">
-        </a>
-        <div class="creation-desc">
-          Spiked Mistress ~ chaînes d'acier, pointes affûtées et puissance féminine incarnée. Créé à la main pour celles qui règnent dans l'ombre...
-        </div>
-      </div>
-    </div>
+  <!-- SUR-MESURE -->
+  <div id="surmesure" class="content-section">
+    <div class="surmesure-hero"></div>
   </div>
 
-  <div id="nouveautes" class="content-section">
-    <div class="section-title">Nouveauté</div>
-    <div class="creations-container">
-      <div class="creation">
-        <a href="https://www.vinted.fr/items/7631976963-harnais-tenebra-creation-unique-fait-main-acier-inoxydable" target="_blank">
-          <img src="harnais.png" alt="Nouveauté">
-        </a>
-        <div class="creation-desc">
-          Découvrez notre dernière création, un bijou unique qui allie élégance et audace. Ce modèle exclusif est conçu pour les esprits libres qui osent affirmer leur style.
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="sur-mesure" class="content-section">
-    <div class="sur-mesure-hero">
-      <div class="hero-content">
-        <h1>Black Lilith</h1>
-        <p>Découvrez des bijoux uniques faits main, inspirés par l'élégance sombre et la modernité</p>
-      </div>
-    </div>
-
-    <div class="section-title">Sur-mesure</div>
-    <div class="creations-container">
-      <p>Découvrez nos créations sur-mesure. Contactez-nous pour un bijou unique fait spécialement pour vous.</p>
-    </div>
-  </div>
-
+  <!-- MON HISTOIRE -->
   <div id="histoire" class="content-section">
-    <div class="histoire-section">
-      <div class="histoire-content">
-        <h2>Mon histoire</h2>
-        <p>Découvrez l'histoire derrière Black Lilith et notre passion pour les bijoux uniques.</p>
-        <div class="tags">
-          <span>#Kinky</span>
-          <span>#BDSM</span>
-          <span>#Performance</span>
-          <span>#Club</span>
-          <span>#Le-chemin</span>
-          <span>#Belle-fontaine</span>
-          <span>#Poucave</span>
-          <span>#Bikini</span>
-          <span>#Andorra</span>
-          <span>#Barcelona</span>
-          <span>#Modem</span>
-          <span>#Villouf'</span>
-          <span>#Hardore-never-die</span>
-          <span>#Dominator2026</span>
-          <span>#Là-oui</span>
-          <span>#Il-est-ou-Charles-Leclerc</span>
-          <span>#Hibernation</span>
-          <span>#Gabelle</span>
-          <span>#Bébou</span>
-          <span>#Néanmoins</span>
-        </div>
-      </div>
-    </div>
+    <div class="histoire-hero"></div>
   </div>
 
-  <!-- Section Boutiques -->
-  <div class="boutiques-section">
-    <div class="boutiques-title">Mes boutiques</div>
-    <a class="bouton-boutique btn-vinted" href="https://www.vinted.fr/blacklilith" target="_blank">Vinted</a>
-    <a class="bouton-boutique btn-etsy" href="https://www.etsy.com/shop/blacklilith" target="_blank">Etsy</a>
-  </div>
-
-  <!-- Section Instagram -->
+  <!-- RÉSEAUX (fond noir retiré) -->
   <div class="reseaux">
     <div class="reseaux-content">
-      Retrouvez-moi sur les réseaux&nbsp;!
+      Retrouvez-moi sur les réseaux !
       <br>
       <a class="btn-insta" href="https://www.instagram.com/blacklilith_fr" target="_blank">Instagram</a>
     </div>
   </div>
 
   <script>
-    // Carousel automatique
-    document.addEventListener('DOMContentLoaded', function() {
+    /* Carrousel */
+    document.addEventListener('DOMContentLoaded', () => {
       const carousel = document.querySelector('.carousel-inner');
       const items = document.querySelectorAll('.carousel-item');
-      let currentIndex = 0;
-      const itemWidth = items[0].offsetWidth;
+      let index = 0;
 
-      function nextItem() {
-        currentIndex = (currentIndex + 1) % items.length;
-        carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+      function next() {
+        index = (index + 1) % items.length;
+        carousel.style.transform = `translateX(-${index * 100}%)`;
       }
-
-      setInterval(nextItem, 5000);
-
-      // Initialisation
-      carousel.style.width = `${items.length * itemWidth}px`;
+      setInterval(next, 5000);
     });
-
-    // Gestion des onglets
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        // Masquer toutes les sections
-        document.querySelectorAll('.content-section').forEach(section => {
-          section.classList.remove('active');
-        });
-
-        // Afficher la section correspondante
-        const targetId = this.getAttribute('href');
-        document.querySelector(targetId).classList.add('active');
-
-        // Changer l'URL sans recharger la page
-        history.pushState(null, null, targetId);
-      });
-    });
-
-    // Afficher la section par défaut (accueil)
-    document.getElementById('accueil').classList.add('active');
   </script>
+
 </body>
 </html>
