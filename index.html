@@ -250,13 +250,13 @@
       position: relative;
       width: 100%;
       height: 100vh;
-      background: url('MH.png') no-repeat center top; /* Modification ici */
+      background: url('MH.png') no-repeat center top;
       background-size: cover;
       display: flex;
-      align-items: flex-start; /* Modification ici */
+      align-items: flex-start;
       justify-content: center;
       text-align: center;
-      padding-top: 150px; /* Modification ici */
+      padding-top: 150px;
     }
     .histoire-content {
       background: rgba(0, 0, 0, 0.7);
@@ -305,6 +305,10 @@
         padding: 10px;
       }
 
+      .menu-toggle {
+        display: block;
+      }
+
       .nav-links {
         display: none;
         flex-direction: column;
@@ -325,10 +329,6 @@
         font-size: 1.2em;
         padding: 10px;
         border-radius: 5px;
-      }
-
-      .menu-toggle {
-        display: block;
       }
 
       .hero {
@@ -371,8 +371,8 @@
       }
 
       .histoire-section {
-        padding-top: 80px; /* Modification ici */
-        align-items: flex-start; /* Modification ici */
+        padding-top: 80px;
+        align-items: flex-start;
       }
 
       .histoire-content {
@@ -527,54 +527,59 @@
 
   <script>
     // Gestion du menu mobile
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
 
-    menuToggle.addEventListener('click', function() {
-      navLinks.classList.toggle('active');
-    });
-
-    // Gestion des onglets
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        // Masquer toutes les sections
-        document.querySelectorAll('.content-section').forEach(section => {
-          section.classList.remove('active');
-        });
-
-        // Afficher la section correspondante
-        const targetId = this.getAttribute('href');
-        document.querySelector(targetId).classList.add('active');
-
-        // Changer l'URL sans recharger la page
-        history.pushState(null, null, targetId);
-
-        // Fermer le menu sur mobile après clic
+      // Initialiser l'état du menu en fonction de la taille de l'écran
+      function initMenu() {
         if (window.innerWidth <= 768) {
-          navLinks.classList.remove('active');
+          navLinks.style.display = 'none';
+        } else {
+          navLinks.style.display = 'flex';
         }
-      });
-    });
-
-    // Afficher la section par défaut (accueil)
-    document.getElementById('accueil').classList.add('active');
-
-    // Gestion responsive
-    function checkScreenSize() {
-      if (window.innerWidth > 768) {
-        navLinks.style.display = 'flex';
-      } else {
-        navLinks.style.display = 'none';
       }
-    }
 
-    // Exécuter une fois au chargement
-    checkScreenSize();
+      // Gestion du clic sur le bouton menu
+      menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+      });
 
-    // Exécuter à chaque redimensionnement
-    window.addEventListener('resize', checkScreenSize);
+      // Gestion des onglets
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+
+          // Masquer toutes les sections
+          document.querySelectorAll('.content-section').forEach(section => {
+            section.classList.remove('active');
+          });
+
+          // Afficher la section correspondante
+          const targetId = this.getAttribute('href');
+          document.querySelector(targetId).classList.add('active');
+
+          // Changer l'URL sans recharger la page
+          history.pushState(null, null, targetId);
+
+          // Fermer le menu sur mobile après clic
+          if (window.innerWidth <= 768) {
+            navLinks.classList.remove('active');
+          }
+        });
+      });
+
+      // Afficher la section par défaut (accueil)
+      document.getElementById('accueil').classList.add('active');
+
+      // Gestion responsive
+      window.addEventListener('resize', function() {
+        initMenu();
+      });
+
+      // Initialiser le menu au chargement
+      initMenu();
+    });
   </script>
 </body>
 </html>
