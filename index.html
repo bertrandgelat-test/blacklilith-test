@@ -91,7 +91,7 @@
     .section-title {
       text-align: center;
       font-size: 2em;
-      margin: 60px 0 30px;
+      margin: 80px 0 30px; /* Augmenté l'espace en haut */
       position: relative;
       font-family: 'UnifrakturCook', cursive;
     }
@@ -249,7 +249,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding-top: 150px; /* Augmenté pour descendre davantage le contenu */
+      padding-top: 200px; /* Augmenté pour descendre davantage le contenu */
     }
     .histoire-content {
       background: rgba(0, 0, 0, 0.7);
@@ -277,6 +277,19 @@
       color: black;
       padding: 5px 10px;
       border-radius: 20px;
+    }
+    .sur-mesure-hero {
+      position: relative;
+      width: 100vw;
+      height: 60vh;
+      min-height: 350px;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('SM2.png');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
     @media (max-width: 768px) {
       .nav-links {
@@ -382,7 +395,7 @@
   </div>
 
   <div id="sur-mesure" class="content-section">
-    <div class="hero">
+    <div class="sur-mesure-hero">
       <div class="hero-content">
         <h1>Black Lilith</h1>
         <p>Découvrez des bijoux uniques faits main, inspirés par l'élégance sombre et la modernité</p>
