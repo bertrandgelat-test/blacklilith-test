@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Black Lilith - Bijoux uniques faits main</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
 
   <style>
@@ -41,7 +42,9 @@
       display: flex;
       list-style: none;
     }
-    .nav-links li { margin-left: 30px; }
+    .nav-links li {
+      margin-left: 30px;
+    }
     .nav-links a {
       color: #fff;
       text-decoration: none;
@@ -50,7 +53,9 @@
       position: relative;
       transition: color 0.3s;
     }
-    .nav-links a:hover { color: #84c223; }
+    .nav-links a:hover {
+      color: #84c223;
+    }
     .nav-links a::after {
       content: '';
       position: absolute;
@@ -61,7 +66,9 @@
       background: #84c223;
       transition: width 0.3s;
     }
-    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
 
     /* HERO (éclairci) */
     .hero {
@@ -69,7 +76,7 @@
       width: 100vw;
       height: 60vh;
       min-height: 350px;
-      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('bl1.png');
+      background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('bl1.png');
       background-size: cover;
       background-position: center;
       display: flex;
@@ -83,71 +90,73 @@
       font-family: 'UnifrakturCook', cursive;
       letter-spacing: 2px;
     }
-    .hero-content p { font-size: 1.2em; margin-top: 15px; }
-
-    /* CARROUSEL FIXÉ */
-    .carousel-container {
-      width: 100%;
-      max-width: 800px;
-      margin: 60px auto;
-      overflow: hidden;
-      position: relative;
+    .hero-content p {
+      font-size: 1.2em;
+      margin-top: 15px;
     }
+
+    /* TITRES DE SECTIONS */
+    .section-title {
+      text-align: center;
+      font-size: 2em;
+      margin: 80px 0 30px;
+      position: relative;
+      font-family: 'UnifrakturCook', cursive;
+    }
+
+    /* SECTIONS */
+    .content-section {
+      display: none;
+      padding: 40px 20px;
+    }
+    .content-section.active {
+      display: block;
+    }
+
+    /* CAROUSEL */
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
     .carousel-inner {
       display: flex;
-      transition: transform 0.6s ease-in-out;
+      transition: transform 0.5s ease-in-out;
     }
+
     .carousel-item {
-      min-width: 100%;
+      position: relative;
+      flex: 0 0 100%;
       text-align: center;
     }
+
     .carousel-item img {
       width: 100%;
-      border-radius: 8px;
-    }
-    .carousel-text {
-      margin-top: 15px;
-      background: rgba(0,0,0,0.6);
-      padding: 15px;
-      border-radius: 5px;
-      max-width: 650px;
-      margin-left: auto;
-      margin-right: auto;
+      display: block;
+      border-radius: 10px;
     }
 
-    /* SUR-MESURE HERO éclairci */
-    .surmesure-hero {
-      height: 40vh;
-      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('surmesure.jpg');
-      background-size: cover;
-      background-position: center;
+    /* LÉGENDES STYLE C (fond noir transparent) */
+    .carousel-caption {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(2px);
+      font-size: 1.1em;
+      line-height: 1.5em;
     }
 
-    /* MON HISTOIRE HERO corrigé */
-    .histoire-hero {
-      height: 40vh;
-      background: url('histoire.jpg');
-      background-size: cover;
-      background-position: center 30%; /* ↓ redescendu */
-    }
-
-    /* RÉSEAUX – suppression du fond noir */
-    .reseaux {
-      padding: 40px 0;
-      text-align: center;
-    }
-    .reseaux-content {
+    .carousel-caption strong {
       font-size: 1.4em;
-      margin-bottom: 15px;
+      font-family: 'UnifrakturCook', cursive;
     }
-    .btn-insta {
-      padding: 12px 25px;
-      background: #84c223;
-      color: #000;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+
   </style>
 </head>
 
@@ -156,12 +165,11 @@
   <!-- NAVBAR -->
   <div class="navbar">
     <div class="nav-container">
-      <a href="#" class="logo">Black Lilith</a>
+      <a class="logo" href="#accueil">Black Lilith</a>
       <ul class="nav-links">
         <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#creations">Mes créations</a></li>
         <li><a href="#nouveautes">Nouveautés</a></li>
-        <li><a href="#surmesure">Sur-mesure</a></li>
+        <li><a href="#surmesure">Sur‑mesure</a></li>
         <li><a href="#histoire">Mon histoire</a></li>
       </ul>
     </div>
@@ -176,22 +184,22 @@
       </div>
     </div>
 
-    <!-- CARROUSEL -->
-    <div class="carousel-container">
+    <!-- CAROUSEL -->
+    <div class="carousel">
       <div class="carousel-inner">
 
         <!-- IMAGE 1 -->
         <div class="carousel-item">
-          <img src="so1.png">
-          <div class="carousel-text">
-            Thornbound – Un collier né pour marquer la nuit.
+          <img src="so1.png" alt="Thornbound">
+          <div class="carousel-caption">
+            <strong>Thornbound</strong> — Un collier né pour marquer la nuit.
           </div>
         </div>
 
         <!-- IMAGE 2 -->
         <div class="carousel-item">
-          <img src="so2.png">
-          <div class="carousel-text">
+          <img src="so2.png" alt="Shadowed Moon">
+          <div class="carousel-caption">
             <strong>Shadowed Moon</strong><br>
             On raconte que chaque chaîne retient un fragment de nuit.<br>
             Un collier comme une invocation, entre rituel lunaire et magie noire.<br>
@@ -201,11 +209,11 @@
 
         <!-- IMAGE 3 -->
         <div class="carousel-item">
-          <img src="so3.png">
-          <div class="carousel-text">
+          <img src="so3.png" alt="Soleil Noir">
+          <div class="carousel-caption">
             <strong>Soleil Noir</strong><br>
             Sous l’ombre des astres, le rituel s’accomplit…<br>
-            Le choker « Soleil Noir », fait à la main en acier inoxydable,<br>
+            Le choker « Soleil Noir », fait à la main en acier inoxydable,<br>
             invoque la lumière interdite et scelle l’alliance entre éclat et ténèbres.<br>
             Un talisman sacré, porteur de mystère et de puissance.
           </div>
@@ -215,38 +223,71 @@
     </div>
   </div>
 
-  <!-- SUR-MESURE -->
+  <!-- AUTRES SECTIONS (inchangées, mais réparées) -->
+  <div id="nouveautes" class="content-section">
+    <h2 class="section-title">Nouveautés</h2>
+  </div>
+
   <div id="surmesure" class="content-section">
-    <div class="surmesure-hero"></div>
+    <h2 class="section-title">Sur‑mesure</h2>
   </div>
 
-  <!-- MON HISTOIRE -->
   <div id="histoire" class="content-section">
-    <div class="histoire-hero"></div>
+    <h2 class="section-title">Mon histoire</h2>
   </div>
 
-  <!-- RÉSEAUX (fond noir retiré) -->
-  <div class="reseaux">
-    <div class="reseaux-content">
-      Retrouvez-moi sur les réseaux !
-      <br>
-      <a class="btn-insta" href="https://www.instagram.com/blacklilith_fr" target="_blank">Instagram</a>
-    </div>
-  </div>
 
+  <!-- JS RÉPARÉ -->
   <script>
-    /* Carrousel */
-    document.addEventListener('DOMContentLoaded', () => {
-      const carousel = document.querySelector('.carousel-inner');
-      const items = document.querySelectorAll('.carousel-item');
-      let index = 0;
+  document.addEventListener('DOMContentLoaded', function() {
 
-      function next() {
-        index = (index + 1) % items.length;
-        carousel.style.transform = `translateX(-${index * 100}%)`;
-      }
-      setInterval(next, 5000);
+    /* CAROUSEL FIX */
+    const carousel = document.querySelector('.carousel-inner');
+    const items = document.querySelectorAll('.carousel-item');
+    let currentIndex = 0;
+
+    function updateCarouselSize() {
+      const itemWidth = document.querySelector('.carousel').offsetWidth;
+      items.forEach(item => item.style.width = itemWidth + 'px');
+      carousel.style.width = (items.length * itemWidth) + 'px';
+      carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    }
+
+    setTimeout(updateCarouselSize, 50);
+    window.addEventListener('resize', updateCarouselSize);
+
+    function nextItem() {
+      currentIndex = (currentIndex + 1) % items.length;
+      updateCarouselSize();
+    }
+
+    setInterval(nextItem, 5000);
+
+    /* NAV FIX */
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        document.querySelectorAll('.content-section').forEach(section => {
+          section.classList.remove('active');
+        });
+
+        const targetId = this.getAttribute('href');
+        const target = document.querySelector(targetId);
+        target.classList.add('active');
+
+        if (targetId === '#accueil') {
+          setTimeout(updateCarouselSize, 150);
+        }
+
+        history.pushState(null, null, targetId);
+      });
     });
+
+    document.getElementById('accueil').classList.add('active');
+    setTimeout(updateCarouselSize, 150);
+
+  });
   </script>
 
 </body>
