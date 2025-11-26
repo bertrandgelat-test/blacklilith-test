@@ -148,9 +148,12 @@
       position: relative;
     }
     .carousel-item img {
-      width: 100%;
-      height: auto;
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
       border-radius: 5px;
+      margin: 0 auto;
+      display: block;
     }
     .carousel-caption {
       position: absolute;
@@ -214,6 +217,13 @@
       background: #c02a5d;
       transform: translateY(-3px);
     }
+    .content-section {
+      display: none;
+      padding: 20px;
+    }
+    .active {
+      display: block;
+    }
     @media (max-width: 768px) {
       .nav-links {
         display: none;
@@ -236,79 +246,101 @@
 <body>
   <nav class="navbar">
     <div class="nav-container">
-      <a href="index.html" class="logo">Black Lilith</a>
+      <a href="#accueil" class="logo">Black Lilith</a>
       <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="creations.html">Mes créations</a></li>
-        <li><a href="nouveautes.html">Nouveautés</a></li>
-        <li><a href="sold-out.html">Sold Out</a></li>
-        <li><a href="sur-mesure.html">Sur-mesure</a></li>
-        <li><a href="histoire.html">Mon histoire</a></li>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#creations">Mes créations</a></li>
+        <li><a href="#nouveautes">Nouveautés</a></li>
+        <li><a href="#sold-out">Sold Out</a></li>
+        <li><a href="#sur-mesure">Sur-mesure</a></li>
+        <li><a href="#histoire">Mon histoire</a></li>
       </ul>
     </div>
   </nav>
 
-  <div class="hero">
-    <div class="hero-content">
-      <h1>Black Lilith</h1>
-      <p>Découvrez des bijoux uniques faits main, inspirés par l'élégance sombre et la modernité</p>
-    </div>
-  </div>
-
-  <div class="section-title">Mes créations</div>
-  <div class="creations-container">
-    <div class="creation">
-      <a href="https://www.vinted.fr/brand/21916732-blacklilith" target="_blank">
-        <img src="bl3.png" alt="Bijou gothique 1">
-      </a>
-      <div class="creation-desc">
-        Liaison interdite ~ Trois anneaux, un pacte. Une goutte de sang pour lier les âmes. Ce collier ne choisit que les esprits et âmes indomptés.
-      </div>
-    </div>
-    <div class="creation">
-      <a href="https://www.vinted.fr/brand/21916732-blacklilith" target="_blank">
-        <img src="bl2.png" alt="Bijou gothique 2">
-      </a>
-      <div class="creation-desc">
-        Spiked Mistress ~ chaînes d'acier, pointes affûtées et puissance féminine incarnée. Créé à la main pour celles qui règnent dans l'ombre...
+  <div id="accueil">
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Black Lilith</h1>
+        <p>Découvrez des bijoux uniques faits main, inspirés par l'élégance sombre et la modernité</p>
       </div>
     </div>
   </div>
 
-  <div class="section-title">Nouveauté</div>
-  <div class="creations-container">
-    <div class="creation">
-      <a href="https://www.vinted.fr/items/7631976963-harnais-tenebra-creation-unique-fait-main-acier-inoxydable" target="_blank">
-        <img src="harnais.png" alt="Nouveauté">
-      </a>
-      <div class="creation-desc">
-        Découvrez notre dernière création, un bijou unique qui allie élégance et audace. Ce modèle exclusif est conçu pour les esprits libres qui osent affirmer leur style.
+  <div id="creations" class="content-section">
+    <div class="section-title">Mes créations</div>
+    <div class="creations-container">
+      <div class="creation">
+        <a href="https://www.vinted.fr/brand/21916732-blacklilith" target="_blank">
+          <img src="bl3.png" alt="Bijou gothique 1">
+        </a>
+        <div class="creation-desc">
+          Liaison interdite ~ Trois anneaux, un pacte. Une goutte de sang pour lier les âmes. Ce collier ne choisit que les esprits et âmes indomptés.
+        </div>
+      </div>
+      <div class="creation">
+        <a href="https://www.vinted.fr/brand/21916732-blacklilith" target="_blank">
+          <img src="bl2.png" alt="Bijou gothique 2">
+        </a>
+        <div class="creation-desc">
+          Spiked Mistress ~ chaînes d'acier, pointes affûtées et puissance féminine incarnée. Créé à la main pour celles qui règnent dans l'ombre...
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="section-title">Sold Out</div>
-  <div class="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item">
-        <img src="so1.png" alt="Sold Out 1">
-        <div class="carousel-caption">
-          Thornbound - Un collier né pour marquer la nuit.
+  <div id="nouveautes" class="content-section">
+    <div class="section-title">Nouveauté</div>
+    <div class="creations-container">
+      <div class="creation">
+        <a href="https://www.vinted.fr/items/7631976963-harnais-tenebra-creation-unique-fait-main-acier-inoxydable" target="_blank">
+          <img src="harnais.png" alt="Nouveauté">
+        </a>
+        <div class="creation-desc">
+          Découvrez notre dernière création, un bijou unique qui allie élégance et audace. Ce modèle exclusif est conçu pour les esprits libres qui osent affirmer leur style.
         </div>
       </div>
-      <div class="carousel-item">
-        <img src="so2.png" alt="Sold Out 2">
-        <div class="carousel-caption">
-          Shadowed Moon - On raconte que chaque chaîne retient un fragment de nuit.<br>
-          Un collier comme une invocation, entre rituel lunaire et magie noire. Portez l’ombre, devenez l’éclipse.
+    </div>
+  </div>
+
+  <div id="sold-out" class="content-section">
+    <div class="section-title">Sold Out</div>
+    <div class="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item">
+          <img src="so1.png" alt="Sold Out 1">
+          <div class="carousel-caption">
+            Thornbound - Un collier né pour marquer la nuit.
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="so2.png" alt="Sold Out 2">
+          <div class="carousel-caption">
+            Shadowed Moon - On raconte que chaque chaîne retient un fragment de nuit.<br>
+            Un collier comme une invocation, entre rituel lunaire et magie noire. Portez l’ombre, devenez l’éclipse.
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="so3.png" alt="Sold Out 3">
+          <div class="carousel-caption">
+            Le choker « Soleil Noir », fait à la main en acier inoxydable, invoque la lumière interdite et scelle l’alliance entre éclat et ténèbres. Un talisman sacré, porteur de mystère et de puissance.
+          </div>
         </div>
       </div>
-      <div class="carousel-item">
-        <img src="so3.png" alt="Sold Out 3">
-        <div class="carousel-caption">
-          Le choker « Soleil Noir », fait à la main en acier inoxydable, invoque la lumière interdite et scelle l’alliance entre éclat et ténèbres. Un talisman sacré, porteur de mystère et de puissance.
-        </div>
-      </div>
+    </div>
+  </div>
+
+  <div id="sur-mesure" class="content-section">
+    <div class="section-title">Sur-mesure</div>
+    <div class="creations-container">
+      <p>Découvrez nos créations sur-mesure. Contactez-nous pour un bijou unique fait spécialement pour vous.</p>
+    </div>
+  </div>
+
+  <div id="histoire" class="content-section">
+    <div class="section-title">Mon histoire</div>
+    <div class="creations-container">
+      <p>Découvrez l'histoire derrière Black Lilith et notre passion pour les bijoux uniques.</p>
     </div>
   </div>
 
@@ -344,6 +376,28 @@
       // Initialisation
       carousel.style.width = `${items.length * itemWidth}px`;
     });
+
+    // Gestion des onglets
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // Masquer toutes les sections
+        document.querySelectorAll('.content-section').forEach(section => {
+          section.classList.remove('active');
+        });
+
+        // Afficher la section correspondante
+        const targetId = this.getAttribute('href');
+        document.querySelector(targetId).classList.add('active');
+
+        // Changer l'URL sans recharger la page
+        history.pushState(null, null, targetId);
+      });
+    });
+
+    // Afficher la section par défaut (accueil)
+    document.getElementById('accueil').classList.add('active');
   </script>
 </body>
 </html>
