@@ -299,6 +299,16 @@
       text-align: center;
     }
 
+    /* Ajout d'un padding-top pour compenser le navbar */
+    #accueil {
+      padding-top: 80px;
+    }
+
+    /* Ajout d'un margin-top pour les autres sections */
+    #creations, #nouveautes, #sur-mesure, #histoire {
+      margin-top: 80px;
+    }
+
     /* Media Queries pour mobile */
     @media (max-width: 768px) {
       .nav-container {
@@ -377,6 +387,15 @@
 
       .histoire-content {
         padding: 20px;
+      }
+
+      /* Ajustement des marges pour mobile */
+      #accueil {
+        padding-top: 100px;
+      }
+
+      #creations, #nouveautes, #sur-mesure, #histoire {
+        margin-top: 100px;
       }
     }
   </style>
